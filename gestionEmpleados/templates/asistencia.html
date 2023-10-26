@@ -1,0 +1,82 @@
+
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio responsive complete</title>
+    </head>
+    <body>
+        <script src="{% static '/assets/js/main.js' %}"></script>
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">{{home.nombre}}</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">Entra</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Asistencias</a></li>
+                        <li class="nav__item"><a href="#portfolio" class="nav__link">Incidencias</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contacta</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+        <main class="l-main"></main>
+
+        <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Asistencia</h2>
+
+                <div class="skills__container bd-grid">
+                <form method="post" action="{% url 'geolocalizacion' %}">
+                    {% csrf_token %}
+                    <div class="skills__box">
+                    
+                        
+                    <h3 class="skills__subtitle">Ficha tu entrada</h3>
+                    <button type="button" style="background-color: gainsboro;" onclick="fetch('geolocalizacion/', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': getCookie('csrftoken')
+                        }
+                    }).then(response => response.json()).then(data => console.log(data))">Entrada</button>
+                    
+                
+                    <h3 class="skills__subtitle">Ficha tu salida</h3>
+                    <button type="button">Salida</button>
+            
+                </div>
+                </form>
+
+                    <div class="skills__img">
+                        <img src="{%static 'assets/img/asistencia.png' %}" alt="">
+                    </div>
+                
+            </section>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+    </body>
+</html>
