@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+        <!--<link rel="stylesheet" href="'https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css'">-->
+    </head>
+    <body>
+        <table>
+            <thead>
+              <tr>
+                <th>ID_entrada</th>
+                <th>nombre_usuario</th>
+                <th>fecha</th>
+                <th>hora</th>
+                <th>coordenadas</th>
+                <th>direccion</th>
+                <th>link_mapa</th>
+                <th>usuario_id</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for salida in salidas %}
+              <tr data-username="{{salida.nombre_usuario}}">
+
+                
+                  <td>{{ salida.id_salida }}</td>
+                  <td>{{ salida.nombre_usuario }}</td>
+                  <td>{{ salida.fecha }}</td>
+                  <td>{{ salida.hora }}</td>
+                  <td>{{salida.coordenadas}}</td>
+                  <td>{{salida.direccion}}</td>
+                  <td>{{salida.link_mapa}}</td>
+                  <td>{{salida.usuario_id}}</td>
+
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        
+        <script src="{%static 'assets/js/main.js' %}"async defer ></script>
+    </body>
+</html>

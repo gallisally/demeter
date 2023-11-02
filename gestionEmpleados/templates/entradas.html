@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+        <script src="https://unpkg.com/scrollreveal"></script>
+    </head>
+    <body>
+        <table>
+            <thead>
+              <tr>
+                <th>ID_entrada</th>
+                <th>nombre_usuario</th>
+                <th>fecha</th>
+                <th>hora</th>
+                <th>coordenadas</th>
+                <th>direccion</th>
+                <th>link_mapa</th>
+                <th>usuario_id</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for entrada in entradas %}
+              <tr data-username="{{entrada.nombre_usuario}}" data-tipo="entrada">
+                
+                  <td>{{ entrada.id_entrada }}</td>
+                  <td>{{ entrada.nombre_usuario }}</td>
+                  <td>{{ entrada.fecha }}</td>
+                  <td>{{ entrada.hora }}</td>
+                  <td>{{entrada.coordenadas}}</td>
+                  <td>{{entrada.direccion}}</td>
+                  <td>{{entrada.link_mapa}}</td>
+                  <td>{{entrada.usuario_id}}</td>
+
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        
+        <script src="{%static 'assets/js/main.js' %}" ></script>
+    </body>
+</html>

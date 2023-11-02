@@ -33,6 +33,8 @@
                         <li class="nav__item"><a href="#skills" class="nav__link">Asistencias</a></li>
                         <li class="nav__item"><a href="#portfolio" class="nav__link">Incidencias</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contacta</a></li>
+                        <li class="nav__item"><a href="{% url 'registros'%}" class= "nav__link"> Registros</a></li>
+
                     </ul>
                 </div>
 
@@ -45,36 +47,30 @@
 
         <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Asistencia</h2>
+                <h2 class="section-title">Registros</h2>
 
                 <div class="skills__container bd-grid">
-                    <form id="salida-form" method="post" action="{% url 'guardar_ficha' %}">
-                        {% csrf_token %}
-                    <div class="skills__box">
+                    <div class="skills__box">     
+                    <h3 class="skills__subtitle">Entradas registradas</h3>
+                    <button id="registro-entrada" type="button" >
+                    <a href="{% url 'vista_entrada' %}">Accede</a>
+                    </button> 
                     
-                        
-                    <h3 class="skills__subtitle">Ficha tu entrada</h3>
-                    <button id="find-me" type="button" onclick="geoFindMe('entrada')">Entrada</button>
-                     <p id="status"></p>
-                     <a id="map-link" target="_blank"></a>
-                    <!--<button id="enlace-mapa" tyoe="button">enlace mapa</button>-->
-                    </form>
-                   
-                    <h3 class="skills__subtitle">Ficha tu salida</h3>
-                     <button id="salida" type="button" onclick="geoFindMe('salida')">Salida</button>
-                     <p id="status"></p>
-                     <a id="map-link" target="_blank"></a>
-                    <!--<button id="enlace-mapa" tyoe="button">enlace mapa</button>-->
-                    </form>
-                    
-            
+                    <h3 class="skills__subtitle">Salidas registradas</h3>
+                    <button id="registro-salida" type="button">
+                        <a href="{% url 'vista_salida' %}">Accede</a>
+                    </button>
                 </div>
-                </form>
+                
 
                     <div class="skills__img">
-                        <img src="{%static 'assets/img/asistencia.png' %}" alt="">
+                        <h3 class="skills__subtitle">Usuarios registrados</h3>
+                        <button id="registro-usuario" type="button">
+                            <a href="{% url 'vista_usuario' %}"> Accede</a>
+                        </button>
+                        <h3 class="skills__subtitle">Incidencias registradasa</h3>
+                        <button id="registro-salida" type="button" onclick="geoFindMe('salida')">Accede</button>
                     </div>
-
                     <div class="back-button">
                         <a href="{% url 'index' %}" class="long-button">Volver a la página principal</a>
                     </div>

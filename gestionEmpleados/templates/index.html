@@ -25,10 +25,11 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">Entra</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Asistencias</a></li>
-                        <li class="nav__item"><a href="#portfolio" class="nav__link">Incidencias</a></li>
+                        <li class="nav__item"><a href="#entra" class="nav__link">Entra</a></li>
+                        <li class="nav__item"><a href="#quees" class="nav__link">¿Qué es?</a></li>
+                        <li class="nav__item"><a href="#incidencias" class="nav__link">Incidencias</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contacta</a></li>
+                        <li class="nav__item"><a href="{% url 'registros'%}" class= "nav__link"> Registros</a></li>
                     </ul>
                 </div>
 
@@ -42,10 +43,10 @@
             <!--===== HOME =====-->
             <section class="home" id="home">
                 <div class="home__container bd-grid">
-                    <h1 class="home__title"><span>{{home.greetings1}}</span><br>{{home.greetings2}}</h1>
+                    <h1 class="home__title"><span>{{home.greetings1}}</span><br></h1>
 
                     <div class="home__scroll">
-                        <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Scroll down</a>
+                        <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Desliza</a>
                     </div>
 
                     /*<img src="{{home.picture.url}}" alt="" class="home__img">*/
@@ -54,7 +55,7 @@
 
         
             <!----===== ABOUT =====-->
-            <section class="about section" id="about">
+            <section class="about section" id="entra">
                 <h2 class="section-title">Entra</h2>
 
                 <div class="about__container bd-grid">
@@ -89,33 +90,35 @@
             </section>
 
             <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Asistencia</h2>
+            <section class="skills section" id="quees">
+                <h2 class="section-title">¿Qué es Demeter?</h2>
 
                 <div class="skills__container bd-grid">
                     <div class="skills__box">
-                        <h3 class="skills__subtitle">Development</h3>
-                        <span class="skills__name">Html</span>
-                        <span class="skills__name">Css</span>
-                        <span class="skills__name">Javascript</span>
-                        <span class="skills__name">Scss</span>
-                        <span class="skills__name">React</span>
+                        <h3 class="skills__subtitle">Gestion de actividades agricolas</h3>
+                        <span class="skills__name">Fichaje</span>
+                        <span class="skills__name">Incidencias</span>
+                        <span class="skills__name">Almacenamiento de informacion</span>
+                        <span class="skills__name">Automatizacion</span>
+                        <span class="skills__name">Control de maquinaria</span>
                         <span class="skills__name">Vue</span>
                         
-                        <h3 class="skills__subtitle">Design</h3>
-                        <span class="skills__name">Figma</span>
-                        <span class="skills__name">Adobe XD</span>
-                        <span class="skills__name">Photoshop</span>
+                        <h3 class="skills__subtitle">Terrenos asociados</h3>
+                        <span class="skills__name">Cabecicos</span>
+                        <span class="skills__name">Arneva</span>
+                        <span class="skills__name">La mota</span>
+                        <span class="skills__name">Urchillo</span>
+                        <span class="skills__name">San Pedro</span>
                     </div>
 
                     <div class="skills__img">
-                        <img src="{%static 'assets/img/skill.jpg' %}" alt="">
+                        <img src="{%static 'assets/img/demeter.jpeg' %}" alt="">
                     </div>
                 </div>
             </section>
 
             <!--===== PORTFOLIO =====-->
-            <section class="portfolio section" id="portfolio">
+            <section class="portfolio section" id="incidencias">
                 <h2 class="section-title">Incidencias</h2>
 
                 <div class="portfolio__container bd-grid">
@@ -166,24 +169,27 @@
 
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section-title">Contacta</h2>
 
                 <div class="contact__container bd-grid">
                     <div class="contact__info">
                         <h3 class="contact__subtitle">EMAIL</h3>
-                        <span class="contact__text">info.mail.com</span>
+                        <span class="contact__text">salygermangarcia@msn.com</span>
+                        <span class="contact__text">gallisergiogs@gmail.com</span>
 
-                        <h3 class="contact__subtitle">PHONE</h3>
-                        <span class="contact__text">+20 999-999</span>
+                        <h3 class="contact__subtitle">TELEFONO/PHONE</h3>
+                        <span class="contact__text">XXXXXXXX</span>
 
-                        <h3 class="contact__subtitle">ADRESS</h3>
-                        <span class="contact__text">My contry</span>
+                        <h3 class="contact__subtitle">PAIS</h3>
+                        <span class="contact__text">España</span>
                     </div>
 
                     <form action="" class="contact__form">
                         <div class="contact__inputs">
                             <input type="text" placeholder="Name" class="contact__input">
                             <input type="mail" placeholder="Email" class="contact__input">
+                            <input type="asunto" placeholder="Asunto" class="contact__input">
+
                         </div>
 
                         <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
@@ -198,18 +204,18 @@
         <footer class="footer section">
             <div class="footer__container bd-grid">
                 <div class="footer__data">
-                    <h2 class="footer__title">JHON DOE</h2>
-                    <p class="footer__text">I'm Jhon Doe and this is my personal website</p>
+                    <h2 class="footer__title">DEMETER</h2>
+                    <p class="footer__text">Aplicacion web-movil con diseño responsive para la gestion de terrenos agricolas</p>
                 </div>
 
                 <div class="footer__data">
                     <h2 class="footer__title">EXPLORE</h2>
                     <ul>
-                        <li><a href="#home" class="footer__link">Home</a></li>
-                        <li><a href="#about" class="footer__link">About</a></li>
-                        <li><a href="#skills" class="footer__link">Skills</a></li>
-                        <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
-                        <li><a href="#Contact" class="footer__link">Contact</a></li>
+                        <li><a href="#home" class="footer__link">Entra</a></li>
+                        <li><a href="#about" class="footer__link">Que es</a></li>
+                        <li><a href="#skills" class="footer__link">Fichaje</a></li>
+                        <li><a href="#portfolio" class="footer__link">Incidencias</a></li>
+                        <li><a href="#Contact" class="footer__link">Contacto</a></li>
                     </ul>
                 </div>
                 
