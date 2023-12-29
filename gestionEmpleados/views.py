@@ -96,7 +96,7 @@ def localizar_coordenadas(direccion):
 
 #def posicion_usuario():
 @login_required
-def geolocalizacion(request,):
+def geolocalizacion(request):
     if request.method=='POST':
         ubicacion_usuario=geocoder.ip('me')
         if ubicacion_usuario.ok:
@@ -124,10 +124,7 @@ def geolocalizacion(request,):
             print(f'la direccion comlpeta es: {address}')
             location = geopy.geocoders.Nominatim(user_agent="gestionEmpleados")
             print(f'la direccion comlpeta es de location: {location}')
-
-
-
-            
+ 
             fecha=datetime.now().date()
             hora_entrada=datetime.now().time()
 
