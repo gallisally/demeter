@@ -1,0 +1,17 @@
+
+## INSTALACION
+cd /demeter
+python -m venv giano 
+## Comando para activar entorno:
+source giano/bin/activate
+
+
+## Instala las dependencias con el siguiente comando:
+source giano/bin/activate
+
+pip install -r requirements.txt
+##  Ejecuta el proyecto con el siguiente comando:
+cd /demeter/campoApp
+
+python ../manage.py runserver 0.0.0.0:8000
+
