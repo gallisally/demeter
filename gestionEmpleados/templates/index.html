@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -13,8 +14,23 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <title>Portfolio responsive complete</title>
+        <link rel="manifest" href="{% static 'manifest.json' %}">
+
     </head>
     <body>
+        <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('{% static "serviceworker.js" %}')
+                  .then(registration => {
+                    console.log('Service Worker registrado con éxito:', registration);
+                  })
+                  .catch(error => {
+                    console.log('Error al registrar el Service Worker:', error);
+                  });
+              });
+            }
+          </script>
         <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">

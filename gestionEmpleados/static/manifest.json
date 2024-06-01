@@ -1,0 +1,17 @@
+{
+    "name": "demeter",
+    "short_name": "demeter",
+    "description": "Descripción de mi aplicación",
+    "icons": [
+      {
+        "src": "/static/assets/img/app_icon.png",
+        "sizes": "160x160",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#FFFF00"
+  }
+  
